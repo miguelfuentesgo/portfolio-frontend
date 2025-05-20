@@ -1,5 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: $color-background;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, $color-background 40%, $color-background-shadow 99%);
   color: $color-primary;
+  overflow-x: hidden;
+}
+
+/* Estilo para el cursor */
+body {
+  cursor: auto; /* Desactiva el cursor predeterminado */
+}
+
+.cursor {
+  z-index: -1;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 100px 0px 50px $color-background-shadow;
+}
+
+.container {
+  padding: 20px 40px;
+}
+
+
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+
+  }
+
+  .container {
+    padding: 15px;
+  }
+  
 }

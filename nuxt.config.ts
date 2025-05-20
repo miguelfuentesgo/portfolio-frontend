@@ -15,5 +15,9 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  },
+  plugins: [
+    { src: '~/plugins/cursor.js', mode: 'client' },
+    '~/plugins/fontawesome.js' 
+  ]
 })
