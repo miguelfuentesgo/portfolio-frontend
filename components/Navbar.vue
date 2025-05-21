@@ -1,13 +1,13 @@
 <template>
     <nav class="navbar">
-      <NuxtLink to="/" class="logo">Hi, I'm Miguel Fuentes</NuxtLink>
+      <NuxtLink to="/" class="logo">M</NuxtLink>
       
       <div :class="{ 'is-active': menuIsOpen }">
         <ul class="nav-links" >
-          <li @click="toggleMenu()" :class="{active: currentPath == '/'}"><NuxtLink to="/"><font-awesome-icon icon="home" size="1x" /> Inicio</NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/proyectos'}"><NuxtLink to="/proyectos"><font-awesome-icon icon="diagram-project" size="1x" /> Proyectos</NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/acerca'}"><NuxtLink to="/acerca"><font-awesome-icon icon="address-card" size="1x" /> Acerca de mí</NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/contacto'}"><NuxtLink to="/contacto"><font-awesome-icon icon="user" size="1x" /> Contacto</NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/'}"><NuxtLink to="/">Inicio <font-awesome-icon icon="home" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/proyectos'}"><NuxtLink to="/proyectos">Proyectos  <font-awesome-icon icon="diagram-project" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/acerca'}"><NuxtLink to="/acerca">Acerca de mí  <font-awesome-icon icon="address-card" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/contacto'}"><NuxtLink to="/contacto">Contacto  <font-awesome-icon icon="user" size="1x" /></NuxtLink></li>
         </ul>
         <div class="plane-road">
           <font-awesome-icon class="plane-selector" :class="getPlaneClass()" icon="plane" size="1x" />
@@ -50,14 +50,17 @@ const currentPath = computed(() => {
 </script>
 <style lang="scss" scoped>
   .navbar {
+    height: 100px;
     display: flex;
-    margin-top: 10px;
+    position: sticky;
+    top: 0px;
+    
     justify-content: space-between;
     align-items: start;
-    padding: 1rem 2rem;
+    padding: 20px 20px;
     background-color: $color-background;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
+    z-index: 1;
   
     .logo {
       font-size: 1.5rem;
@@ -75,6 +78,7 @@ const currentPath = computed(() => {
       display: flex;
       gap: 1.5rem;
       list-style: none;
+      background-color: $color-background;
   
       a {
         padding: 10px 20px;
@@ -88,14 +92,13 @@ const currentPath = computed(() => {
           color: $color-secondary;
           background-color: rgba($color-background, 0.1);
           border: 1px solid $color-secondary;
-          transform: scale(1.5);
         } 
       }
       .active a {
         color: $color-primary;
           background-color: rgba($color-background, 0.1);
           border: 1px solid $color-primary;
-          transform: scale(1.5);
+          
       }
     }
 
@@ -143,17 +146,27 @@ const currentPath = computed(() => {
 
   @media (max-width: 768px) {
     .navbar {
-
       .nav-links {
-        width: auto;
+        width: 160px;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: -250px;
         flex-direction: column;
+        gap: 2px;
         align-items: end;
         justify-content: center;
         display: flex;
         transition: right 0.3s ease-in-out;
+        
+        li {
+          width: 100%;
+          text-align: end;
+          a {
+            display: block;
+            width: 100%;
+          }
+        }
+       
       }
 
       .plane-road {
@@ -164,12 +177,14 @@ const currentPath = computed(() => {
         right: 0px;
         width: auto;
         height: 140px;
+        
   
         .plane-selector {
           display: none;
           position: absolute;
           rotate: 90deg;
           right: -250px;
+          transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
         }
   
         
@@ -183,7 +198,7 @@ const currentPath = computed(() => {
         .plane-selector {
           display: block;
           right: 0px;
-          transition: top 0.3s ease-in-out;
+          
           
   
           &.second {
