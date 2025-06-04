@@ -17,6 +17,10 @@ body {
   cursor: auto; /* Desactiva el cursor predeterminado */
 }
 
+p {
+  color: $color-secondary;
+}
+
 .cursor {
   z-index: -1;
   position: absolute;
