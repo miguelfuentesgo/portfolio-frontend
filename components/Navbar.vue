@@ -6,7 +6,7 @@
         <ul class="nav-links" >
           <li @click="toggleMenu()" :class="{active: currentPath == '/'}"><NuxtLink to="/">Inicio <font-awesome-icon icon="home" size="1x" /></NuxtLink></li>
           <li @click="toggleMenu()" :class="{active: currentPath == '/proyectos'}"><NuxtLink to="/proyectos">Proyectos  <font-awesome-icon icon="diagram-project" size="1x" /></NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/acerca'}"><NuxtLink to="/acerca">Acerca de mí  <font-awesome-icon icon="address-card" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/acerca'}"><NuxtLink to="/acerca">Experiencia  <font-awesome-icon icon="address-card" size="1x" /></NuxtLink></li>
           <li @click="toggleMenu()" :class="{active: currentPath == '/contacto'}"><NuxtLink to="/contacto">Contacto  <font-awesome-icon icon="user" size="1x" /></NuxtLink></li>
         </ul>
         <div class="plane-road">
@@ -109,12 +109,12 @@ const currentPath = computed(() => {
 
       .plane-selector {
         
-        right: 570px;
+        right: 560px;
         position: absolute;
         transition: right 0.3s ease-in-out;
 
         &.second {
-          right: 430px;
+          right: 420px;
         }
         &.third {
           right: 255px;
