@@ -5,9 +5,9 @@
       <div :class="{ 'is-active': menuIsOpen }">
         <ul class="nav-links" >
           <li @click="toggleMenu()" :class="{active: currentPath == '/'}"><NuxtLink to="/">Inicio <font-awesome-icon icon="home" size="1x" /></NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/proyectos'}"><NuxtLink to="/proyectos">Proyectos  <font-awesome-icon icon="diagram-project" size="1x" /></NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/acerca'}"><NuxtLink to="/acerca">Experiencia  <font-awesome-icon icon="address-card" size="1x" /></NuxtLink></li>
-          <li @click="toggleMenu()" :class="{active: currentPath == '/contacto'}"><NuxtLink to="/contacto">Contacto  <font-awesome-icon icon="user" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/projects'}"><NuxtLink to="/projects">Proyectos  <font-awesome-icon icon="diagram-project" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/experience'}"><NuxtLink to="/experience">Experiencia  <font-awesome-icon icon="address-card" size="1x" /></NuxtLink></li>
+          <li @click="toggleMenu()" :class="{active: currentPath == '/contact'}"><NuxtLink to="/contact">Contacto  <font-awesome-icon icon="user" size="1x" /></NuxtLink></li>
         </ul>
         <div class="plane-road">
           <font-awesome-icon class="plane-selector" :class="getPlaneClass()" icon="plane" size="1x" />
@@ -36,11 +36,11 @@ const toggleMenu = (time = 500) => {
 const getPlaneClass = () => {
   if (currentPath.value === '/') {
     return 'first';
-  } else if (currentPath.value === '/proyectos') {
+  } else if (currentPath.value === '/projects') {
     return 'second';
-  } else if (currentPath.value === '/acerca') {
+  } else if (currentPath.value === '/experience') {
     return 'third';
-  } else if (currentPath.value === '/contacto') {
+  } else if (currentPath.value === '/contact  ') {
     return 'fourth';
   }
 }

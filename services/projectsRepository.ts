@@ -1,6 +1,6 @@
 // services/projectRepository.ts
 import api from './api';
-import { type Project, type ProjectCreate, type ProjectUpdate } from '~/types/project'; // Importa tus tipos
+import { type Project, type ProjectCreate, type ProjectUpdate } from '@/types/project.d.ts'; // Importa tus tipos
 
 const RESOURCE_URL = 'projects/';
 
