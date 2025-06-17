@@ -68,6 +68,7 @@
         .icons-container {
             display: flex;
             flex-wrap: wrap;
+            min-width: 200px;
             justify-content: start;
             
             transition: all 0.2s ease-in-out;
