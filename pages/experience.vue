@@ -1,15 +1,15 @@
 <template>
-    <div class="experience-container">
+    <div class="experiencenpm-container">
         <ul class="list">
-            <li v-for="project, index in data" :key="index">
+            <li v-for="experience, index in data" :key="index">
                 <!-- <ProjectCard :title="project.title" :description="project.description" :technologies="project.technologies" /> -->
                 <ExperienceCard 
-                    role="Desarrollador Fullstack" 
-                    company="Proximax" 
-                    startDate="01/02/2021" 
-                    endDate="30/02/2024" 
-                    description="Desarrollo de aplicaciones web tomando como base blockchain" 
-                    technologies="Vue, Golang, Typescripts"
+                    :position="experience.position" 
+                    :company="experience.company" 
+                    :startDate="experience.start_date" 
+                    :endDate="experience.end_date" 
+                    :description="experience.description" 
+                    :technologies="experience.technologies"
                 />
             </li>
             
@@ -20,13 +20,12 @@
 
 
 <script setup lang="ts">
-import { type Project } from '@/types/project.d.ts';
-import ProjectCard from '~/components/projects/ProjectCard.vue';
+import { type Experience } from '@/types/experience.d.ts';
 import ExperienceCard from '~/components/experience/ExperienceCard.vue';
-import projectReporsitory from '~/services/projectsRepository';
+import experiencRepository from '~/services/experienceRepository';
 
-const { data } = useAsyncData<Project[]>('allProjects', () => {
-    return projectReporsitory.getAll()
+const { data } = useAsyncData<Experience[]>('allExperiences', () => {
+    return experiencRepository.getAll()
 });
 
 </script>

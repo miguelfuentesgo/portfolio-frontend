@@ -2,7 +2,7 @@
     <div class="card">
         <div class="header">
             <h2 class="role">
-                {{ props.role }}
+                {{ props.position }}
             </h2>
             <h3 class="company">
                 {{ props.company }}
@@ -11,7 +11,7 @@
             <div class="date-range">
                 <span class="start-date">
                     {{ props.startDate }}
-                </span>
+                </span> -
                 <span class="end-date">
                     {{ props.endDate }}
                 </span>
@@ -46,7 +46,7 @@
 import { defineProps } from 'vue';
 
 const props = defineProps<{
-        role: string,
+        position: string,
         company: string,
         startDate: string,
         endDate: string,
