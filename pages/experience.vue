@@ -10,6 +10,7 @@
                     :endDate="experience.end_date" 
                     :description="experience.description" 
                     :technologies="experience.technologies"
+                    
                 />
             </li>
             
@@ -27,5 +28,7 @@ import experiencRepository from '~/services/experienceRepository';
 const { data } = useAsyncData<Experience[]>('allExperiences', () => {
     return experiencRepository.getAll()
 });
+
+
 
 </script>

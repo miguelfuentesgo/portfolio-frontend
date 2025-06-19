@@ -40,7 +40,7 @@ const getPlaneClass = () => {
     return 'second';
   } else if (currentPath.value === '/experience') {
     return 'third';
-  } else if (currentPath.value === '/contact  ') {
+  } else if (currentPath.value === '/contact') {
     return 'fourth';
   }
 }
